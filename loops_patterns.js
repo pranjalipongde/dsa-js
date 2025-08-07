@@ -293,6 +293,23 @@ for (let i = 0; i <= n; i++) {
   console.log(row);
 }
 
+//or
+
+for (let i = 0; i <= n; i++) {
+  let row = "";
+
+  for (let ch = 65; ch <= 65 + i; ch++) {
+    row += String.fromCharCode(ch) + " ";
+  }
+  console.log(row);
+}
+
+// A B C D E
+// A B C D
+// A B C
+// A B
+// A
+
 for (let i = 0; i <= n; i++) {
   let row = "";
   for (let j = 0; j < n - i + 1; j++) {
@@ -300,4 +317,55 @@ for (let i = 0; i <= n; i++) {
   }
   console.log(row);
 }
+//or
+for (let i = 0; i <= n; i++) {
+  let row = "";
+  for (let ch = 65; ch < 65 + n - i; ch++) {
+    row += String.fromCharCode(ch) + " ";
+  }
+  console.log(row);
+}
+
+// A
+// B B
+// C C C
+// D D D D
+// E E E E E
+
+for (let i = 0; i <= n; i++) {
+  let row = "";
+  let ch = String.fromCharCode(65 + i);
+
+  for (let j = 0; j <= i; j++) {
+    row += ch + "";
+  }
+  console.log(row);
+}
+
+for (let i = 0; i <= n; i++) {
+  let row = "";
+
+  //space
+  for (let j = 0; j <= n - i - 1; j++) {
+    row += " ";
+  }
+
+  //letters
+
+  let ch = 65; // ASCII for 'A'
+  let breakpoint = Math.floor((2 * i + 1) / 2);
+
+  for (let j = 0; j < 2 * i + 1; j++) {
+    row += String.fromCharCode(ch);
+
+    if (j < breakpoint) {
+      ch++;
+    } else {
+      ch--;
+    }
+  }
+
+  console.log(row);
+}
+
 // node loops_patterns.js
