@@ -342,6 +342,12 @@ for (let i = 0; i <= n; i++) {
   console.log(row);
 }
 
+//      A
+//     ABA
+//    ABCBA
+//   ABCDCBA
+//  ABCDEDCBA
+// ABCDEFEDCBA
 for (let i = 0; i <= n; i++) {
   let row = "";
 
@@ -368,4 +374,52 @@ for (let i = 0; i <= n; i++) {
   console.log(row);
 }
 
+function pattern19(n) {
+  let iniS = 0;
+  for (let i = 0; i <= n; i++) {
+    let row = "";
+
+    //stars
+    for (let j = 0; j < n - i; j++) {
+      row += "*";
+    }
+
+    //spaces
+    for (let j = 0; j < iniS; j++) {
+      row += " ";
+    }
+
+    //stars
+    for (let j = 0; j < n - i; j++) {
+      row += "*";
+    }
+
+    iniS += 2;
+    console.log(row);
+  }
+
+  iniS = 8;
+  for (let i = 0; i <= n; i++) {
+    let row = "";
+
+    //stars
+    for (let j = 0; j <= i; j++) {
+      row += "*";
+    }
+
+    //spaces
+    for (let j = 0; j < iniS; j++) {
+      row += " ";
+    }
+
+    //stars
+    for (let j = 0; j <= i; j++) {
+      row += "*";
+    }
+
+    iniS -= 2;
+    console.log(row);
+  }
+}
+pattern19(5);
 // node loops_patterns.js
