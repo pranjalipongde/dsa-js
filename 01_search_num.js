@@ -2,7 +2,7 @@
 
 let arr = [12, 2, 34, 6, 9, 11];
 
-function searchEleemnt(arr, num) {
+function searchElement(arr, num) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == num) {
       return i;
@@ -11,4 +11,4 @@ function searchEleemnt(arr, num) {
   return -1;
 }
 
-console.log(searchEleemnt(arr, 34));
+console.log(searchElement(arr, 34));
